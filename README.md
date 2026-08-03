@@ -1,134 +1,156 @@
-# Intraday CME Map System 📈
+# Intraday CME Map System
 
-Real-time CME Intraday Volume, Vol2Vol Option Strike Map & Standard Deviation Target Level System.
+FastAPI + React dashboard for CME Vol2Vol option strike maps, volume deltas, standard-deviation levels, price candles, and live market updates for GC, NQ, and ES.
 
-Built with **FastAPI**, **Asyncio**, **TradingView Lightweight Charts (v5)**, **Vite**, **React**, **TypeScript**, and **Tailwind CSS**.
+## Architecture
 
----
-
-## 🌟 Key Features
-
-- **Vol2Vol CME Data Engine**: Scrapes and parses live & archived CME option volume distribution data for **GC** (Gold), **NQ** (Nasdaq 100), and **ES** (S&P 500) from `D:\GetDataCMEBoy\output\vol2vol`.
-- **Live Price Chart & Standard Deviation Levels**: TradingView Lightweight Charts canvas rendering 1-minute price candles overlaid with **+1SD, +2SD, +3SD, -1SD, -2SD, -3SD** target bands & CME Future Reference Price.
-- **Intraday Volume Distribution Histogram**: Call (Green) vs. Put (Red) volume nodes across strike prices, with automatic detection of **Call Wall** and **Put Wall**.
-- **Interactive Strike Map Table**: Searchable, filterable, and sortable strike table showing Call/Put volumes, intraday volume deltas, implied volatility (IV %), and volume ratio bars.
-- **Real-Time WebSocket & Fallback Polling**: Zero-delay live streaming (`/ws/market`) with automatic reconnect and background status monitoring (**LIVE** vs. **STALE** indicators).
-
----
-
-## 🏗️ Project Architecture
-
-```
-intraday-map-cme/
-├── backend/
-│   ├── adapters/
-│   │   └── cme_adapter.py         # CME Vol2Vol JSON parser & delta calculator
-│   ├── models/
-│   │   └── cme.py                 # Pydantic schemas (StrikeData, SDLevel, CmeSymbolData, etc.)
-│   ├── services/
-│   │   └── price_service.py       # Live/Historical price engine (TvDatafeed / yfinance / fallback)
-│   ├── state/
-│   │   └── market_state.py        # In-memory thread-safe state store & WebSocket broadcaster
-│   ├── workers/
-│   │   └── cme_polling_worker.py  # Async background watcher for D:\GetDataCMEBoy\output\vol2vol
-│   └── main.py                    # FastAPI app & WebSocket endpoint
-├── frontend/                      # Vite + React + TypeScript + TradingView Lightweight Charts
-│   ├── src/
-│   │   ├── components/            # Header, MetricsOverview, TradingViewChart, VolumeDistributionChart, StrikeTable
-│   │   ├── services/              # API client & WebSocket connector
-│   │   ├── types/                 # TypeScript interfaces
-│   │   ├── App.tsx
-│   │   └── index.css
-│   ├── package.json
-│   └── vite.config.ts
-├── scripts/
-│   └── inspect_vol2vol.py         # Utility script to inspect Vol2Vol data files
-└── tests/
-    └── test_backend.py            # Pytest test suite for API endpoints & adapters
+```text
+backend/   FastAPI API, Vol2Vol parser, price service, polling worker, WebSocket
+frontend/  Vite + React + TypeScript dashboard
+scripts/   Data inspection and static-data export utilities
+tests/     Backend pytest tests
 ```
 
----
+The backend reads Vol2Vol JSON snapshots from `CME_DATA_DIR`. The frontend can also run in static mode from `frontend/public/data`.
 
-## 🚀 Getting Started
+## Data modes
 
-### 1. Backend Setup (FastAPI)
+### Live backend mode
+
+The backend expects one of these files in `CME_DATA_DIR`:
+
+- `vol2vol_summary_latest.json`
+- `vol2vol_GC_*.json`, `vol2vol_NQ_*.json`, `vol2vol_ES_*.json`
+
+Local default path:
+
+```text
+D:\GetDataCMEBoy\output\vol2vol
+```
+
+Override it with `CME_DATA_DIR`.
+
+### Static frontend mode
+
+Export snapshots before building the frontend:
 
 ```bash
-# From project root
-python -m pytest tests/test_backend.py
-
-# Run FastAPI server
-python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-FastAPI server runs at `http://localhost:8000`.
-
-#### REST API Endpoints:
-- `GET /api/health` - Health check status
-- `GET /api/symbols` - Supported symbol list (`["GC", "NQ", "ES"]`)
-- `GET /api/intraday/{symbol}` - CME Vol2Vol strike map, deltas & SD levels
-- `GET /api/price/{symbol}` - OHLCV price candles & current price
-- `GET /api/status` - System status, staleness indicator & active WebSockets
-- `WS /ws/market` - Real-time market state WebSocket feed
-
-### 2. Frontend Setup (React + Vite + TypeScript)
-
-```bash
+python scripts/export_cme_static.py
 cd frontend
-npm install
-npm run dev
-```
-
-Frontend dev server runs at `http://localhost:5173`.
-
-To build for production:
-```bash
 npm run build
 ```
 
----
+Static mode works on GitHub Pages or Vercel without the CME backend, but data is a snapshot, not live streaming data. Price fallback candles are synthetic when the backend price API is unavailable.
 
-## 🐳 Running with Docker & Docker Compose
+## Local development
 
-You can build and start the entire stack (FastAPI backend + Nginx-served React frontend) with a single command:
+### Backend
+
+From project root:
 
 ```bash
-# Build and start services
+pip install -r requirements.txt
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm ci
+npm run dev
+```
+
+Default URLs:
+
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:8000`
+- API docs: `http://localhost:8000/docs`
+
+## Frontend environment variables
+
+Vite variables are build-time values.
+
+```env
+# API base must include /api
+VITE_API_BASE=https://cme-backend.onrender.com/api
+
+# Full WebSocket endpoint
+VITE_WS_BASE=wss://cme-backend.onrender.com/ws/market
+```
+
+Without these variables, production builds use same-origin `/api` and `/ws/market`, which is suitable only when frontend and backend share one host. GitHub Pages builds currently use static fallback unless these variables are added to the Pages workflow.
+
+## API
+
+- `GET /api/health`
+- `GET /api/symbols`
+- `GET /api/intraday/{symbol}`
+- `GET /api/price/{symbol}`
+- `GET /api/status`
+- `WS /ws/market`
+
+## Docker Compose
+
+```bash
 docker compose up --build
 ```
 
-Access the services at:
-- **Frontend Web UI**: `http://localhost:5173`
-- **Backend API Docs**: `http://localhost:8000/docs`
-- **Health Check**: `http://localhost:8000/api/health`
+Compose mappings:
 
-### Environment Variables & Custom CME Data Directory
-By default, Docker Compose mounts `D:/GetDataCMEBoy/output/vol2vol` to `/app/data/vol2vol` inside the backend container. You can override the local CME data directory path using `CME_DATA_DIR`:
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:8002`
+- Backend health: `http://localhost:8002/api/health`
 
-```bash
-# On Windows PowerShell
-$env:CME_DATA_DIR="D:/GetDataCMEBoy/output/vol2vol"; docker compose up --build
+PowerShell example:
 
-# On Linux/macOS
-CME_DATA_DIR="/path/to/vol2vol" docker compose up --build
+```powershell
+$env:CME_DATA_DIR="D:/GetDataCMEBoy/output/vol2vol"
+docker compose up --build
 ```
 
----
+## Render deployment
 
-## 🧪 Testing
+The backend image builds successfully locally. Before deploying as a Render Web Service:
 
-Run backend test suite:
+1. Bind Uvicorn to Render's `PORT` environment variable, or explicitly configure the Render service port to match the image.
+2. Set `CME_DATA_DIR` to a real data source available inside the service.
+3. Do not rely on the Windows `D:` path or a local Docker volume.
+4. Configure health check path `/api/health`.
+
+Render Free services have ephemeral filesystems. A Render service cannot read the developer machine's Vol2Vol directory after deployment. Use an external ingestion process, object storage, database, or deploy frontend static snapshots only.
+
+## GitHub Pages / Vercel
+
+The GitHub Pages workflow is `.github/workflows/deploy-pages.yml`. It publishes `frontend/dist`.
+
+- GitHub Pages works with the current relative Vite base and static JSON fallback.
+- For live Render data, provide `VITE_API_BASE` and `VITE_WS_BASE` during the Pages build.
+- Vercel uses the same build command: `npm run build`, output directory `dist`.
+
+## Tests and verification
+
 ```bash
-python -m pytest tests/test_backend.py
-```
-
-Run Vol2Vol data inspector script:
-```bash
+python -m pytest tests/test_backend.py -q
+python -m compileall -q backend
 python scripts/inspect_vol2vol.py
+
+cd frontend
+npm run build
+npm run lint
 ```
 
----
+Production Docker checks:
 
-## 📜 License
+```bash
+docker build -t intraday-cme-backend-check backend
+docker build -t intraday-cme-frontend-check frontend
+```
 
-MIT License &copy; 2026 Intraday CME Map Project.
+## Security
+
+Never commit API credentials, refresh tokens, deploy hooks, or `.env` files. Store secrets in Render environment variables or GitHub Actions secrets. Rotate any credential that has ever been committed or exposed.
+
+## License
+
+MIT License. Copyright 2026 Intraday CME Map Project.
