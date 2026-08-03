@@ -6,6 +6,11 @@ class StrikeData(BaseModel):
     callVolume: int = 0
     putVolume: int = 0
     totalVolume: int = 0
+    callOi: int = 0
+    putOi: int = 0
+    totalOi: int = 0
+    netOi: int = 0
+    oiChange: int = 0
     impliedVol: Optional[float] = None
     settleVol: Optional[float] = None
 

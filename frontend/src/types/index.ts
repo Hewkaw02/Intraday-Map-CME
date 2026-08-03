@@ -15,6 +15,11 @@ export interface StrikeData {
   callVolume: number;
   putVolume: number;
   totalVolume: number;
+  callOi?: number;
+  putOi?: number;
+  totalOi?: number;
+  netOi?: number;
+  oiChange?: number;
   impliedVol?: number | null;
   settleVol?: number | null;
 }

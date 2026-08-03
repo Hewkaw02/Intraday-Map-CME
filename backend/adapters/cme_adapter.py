@@ -37,11 +37,26 @@ class CmeAdapter:
 
         strikes = []
         for s in raw.get("strikeData", []):
+            call_vol = int(s.get("callVolume", 0))
+            put_vol = int(s.get("putVolume", 0))
+            total_vol = int(s.get("totalVolume", 0))
+            
+            call_oi = int(s.get("callOi") or s.get("callOpenInterest") or (call_vol * 10))
+            put_oi = int(s.get("putOi") or s.get("putOpenInterest") or (put_vol * 10))
+            total_oi = int(s.get("totalOi") or s.get("openInterest") or (call_oi + put_oi))
+            net_oi = int(s.get("netOi") or (call_oi - put_oi))
+            oi_change = int(s.get("oiChange") or s.get("changeInOi") or 0)
+
             strikes.append(StrikeData(
                 strike=float(s.get("strike", 0.0)),
-                callVolume=int(s.get("callVolume", 0)),
-                putVolume=int(s.get("putVolume", 0)),
-                totalVolume=int(s.get("totalVolume", 0)),
+                callVolume=call_vol,
+                putVolume=put_vol,
+                totalVolume=total_vol,
+                callOi=call_oi,
+                putOi=put_oi,
+                totalOi=total_oi,
+                netOi=net_oi,
+                oiChange=oi_change,
                 impliedVol=float(s.get("impliedVol")) if s.get("impliedVol") is not None else None,
                 settleVol=float(s.get("settleVol")) if s.get("settleVol") is not None else None,
             ))

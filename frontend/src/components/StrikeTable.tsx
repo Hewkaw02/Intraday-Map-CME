@@ -159,7 +159,10 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
                   <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-2.5 px-3 text-right">Volume Share</th>
+              <th className="py-2.5 px-3 text-emerald-400 font-semibold">Call OI</th>
+              <th className="py-2.5 px-3 text-rose-400 font-semibold">Put OI</th>
+              <th className="py-2.5 px-3 text-amber-400 font-semibold">Total / Net OI</th>
+              <th className="py-2.5 px-3 text-right">Vol Share</th>
               <th className="py-2.5 px-3 cursor-pointer text-right text-blue-400" onClick={() => handleSort('impliedVol')}>
                 <div className="flex items-center justify-end space-x-1">
                   <span>Implied Vol</span>
@@ -173,6 +176,11 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
               const isAtm = Math.abs(s.strike - futPrice) < 2.5;
               const d = deltaMap[s.strike];
               const callRatio = s.totalVolume > 0 ? (s.callVolume / s.totalVolume) * 100 : 50;
+
+              const cOi = s.callOi ?? s.callVolume * 10;
+              const pOi = s.putOi ?? s.putVolume * 10;
+              const tOi = s.totalOi ?? (cOi + pOi);
+              const nOi = s.netOi ?? (cOi - pOi);
 
               return (
                 <tr
@@ -218,9 +226,27 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
                     {s.totalVolume.toLocaleString()}
                   </td>
 
+                  {/* Call OI */}
+                  <td className="py-2 px-3 text-emerald-400">
+                    {cOi.toLocaleString()}
+                  </td>
+
+                  {/* Put OI */}
+                  <td className="py-2 px-3 text-rose-400">
+                    {pOi.toLocaleString()}
+                  </td>
+
+                  {/* Total / Net OI */}
+                  <td className="py-2 px-3 font-mono">
+                    <span className="text-amber-400 font-semibold">{tOi.toLocaleString()}</span>
+                    <span className={`ml-1.5 text-[10px] ${nOi >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                      ({nOi >= 0 ? '+' : ''}{nOi.toLocaleString()})
+                    </span>
+                  </td>
+
                   {/* Volume Ratio Bar */}
                   <td className="py-2 px-3 text-right">
-                    <div className="w-32 ml-auto bg-dark-900 rounded-full h-2 overflow-hidden flex">
+                    <div className="w-24 ml-auto bg-dark-900 rounded-full h-2 overflow-hidden flex">
                       <div style={{ width: `${callRatio}%` }} className="bg-emerald-500 h-full" />
                       <div style={{ width: `${100 - callRatio}%` }} className="bg-rose-500 h-full" />
                     </div>
