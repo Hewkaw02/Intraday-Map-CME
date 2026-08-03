@@ -42,6 +42,25 @@ npm run build
 
 Static mode works on GitHub Pages or Vercel without the CME backend, but data is a snapshot, not live streaming data. Price fallback candles are synthetic when the backend price API is unavailable.
 
+## ⚡ 1-Click Standalone Local Mode (Vol2Vol direct)
+
+To run the full system standalone locally using only `D:\GetDataCMEBoy\output\vol2vol` without Docker or Node dev servers:
+
+**Windows (Double-click or PowerShell):**
+```cmd
+run_standalone.bat
+```
+
+**Python (Cross-platform):**
+```bash
+python run_standalone.py
+```
+
+This automatically:
+1. Reads Vol2Vol snapshots live from `D:\GetDataCMEBoy\output\vol2vol`
+2. Serves the API + WebSocket + Built React Dashboard on `http://localhost:8002`
+3. Automatically opens your web browser to the live dashboard!
+
 ## Local development
 
 ### Backend

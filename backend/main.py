@@ -128,8 +128,15 @@ async def websocket_endpoint(websocket: WebSocket):
         logger.info("WebSocket client disconnected.")
     except Exception as e:
         logger.warning(f"WebSocket error: {e}")
-    finally:
-        await market_state.unregister_subscriber(websocket)
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+FRONTEND_DIST = PROJECT_ROOT / "frontend" / "dist"
+
+if FRONTEND_DIST.exists():
+    logger.info(f"Serving static frontend bundle from {FRONTEND_DIST}")
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIST), html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
