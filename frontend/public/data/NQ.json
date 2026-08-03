@@ -4,51 +4,64 @@
     "symbol": "NQ",
     "productName": "NASDAQ 100 (NQ|NQ)",
     "title": "Q1AQ6 Intraday Volume",
-    "futurePrice": 28644.5,
+    "futurePrice": 28630.75,
     "atmVolatility": 0.164240930775122,
-    "dte": 0.561817129629629,
+    "dte": 0.551319444444444,
     "standardDeviations": [
       {
         "sd": 1,
         "downside": {
-          "width": 184.57279909350837,
-          "strikeStart": 28459.92720090649,
-          "strikeEnd": 28644.5
+          "width": 182.75255442692287,
+          "strikeStart": 28447.997445573077,
+          "strikeEnd": 28630.75
         },
         "upside": {
-          "width": 184.5727908632216,
-          "strikeStart": 28644.5,
-          "strikeEnd": 28829.07279086322
+          "width": 182.75254650513307,
+          "strikeStart": 28630.75,
+          "strikeEnd": 28813.502546505133
         }
       },
       {
         "sd": 2,
         "downside": {
-          "width": 367.3692533422254,
-          "strikeStart": 28277.130746657775,
-          "strikeEnd": 28459.92720090649
+          "width": 363.76272158863867,
+          "strikeStart": 28266.98727841136,
+          "strikeEnd": 28447.997445573077
         },
         "upside": {
-          "width": 370.9372538160569,
-          "strikeStart": 28829.07279086322,
-          "strikeEnd": 29015.437253816057
+          "width": 367.2623727942919,
+          "strikeStart": 28813.502546505133,
+          "strikeEnd": 28998.012372794292
         }
       },
       {
         "sd": 3,
         "downside": {
-          "width": 548.9916166155854,
-          "strikeStart": 28095.508383384415,
-          "strikeEnd": 28277.130746657775
+          "width": 543.6211493114533,
+          "strikeStart": 28087.128850688547,
+          "strikeEnd": 28266.98727841136
         },
         "upside": {
-          "width": 558.5064628702858,
-          "strikeStart": 29015.437253816057,
-          "strikeEnd": 29203.006462870286
+          "width": 552.9537241667749,
+          "strikeStart": 28998.012372794292,
+          "strikeEnd": 29183.703724166775
         }
       }
     ],
     "strikeData": [
+      {
+        "strike": 28090.0,
+        "callVolume": 0,
+        "putVolume": 12,
+        "totalVolume": 12,
+        "callOi": 0,
+        "putOi": 120,
+        "totalOi": 120,
+        "netOi": -120,
+        "oiChange": 0,
+        "impliedVol": 0.183948082620191,
+        "settleVol": 0.1839480826201907
+      },
       {
         "strike": 28100.0,
         "callVolume": 100,
@@ -403,12 +416,12 @@
       {
         "strike": 28325.0,
         "callVolume": 0,
-        "putVolume": 11,
-        "totalVolume": 11,
+        "putVolume": 12,
+        "totalVolume": 12,
         "callOi": 0,
-        "putOi": 110,
-        "totalOi": 110,
-        "netOi": -110,
+        "putOi": 120,
+        "totalOi": 120,
+        "netOi": -120,
         "oiChange": 0,
         "impliedVol": 0.169681403029244,
         "settleVol": 0.1696814030292444
@@ -494,12 +507,12 @@
       {
         "strike": 28380.0,
         "callVolume": 0,
-        "putVolume": 4,
-        "totalVolume": 4,
+        "putVolume": 5,
+        "totalVolume": 5,
         "callOi": 0,
-        "putOi": 40,
-        "totalOi": 40,
-        "netOi": -40,
+        "putOi": 50,
+        "totalOi": 50,
+        "netOi": -50,
         "oiChange": 0,
         "impliedVol": 0.165727666153543,
         "settleVol": 0.1657276661535434
@@ -520,12 +533,12 @@
       {
         "strike": 28400.0,
         "callVolume": 8,
-        "putVolume": 135,
-        "totalVolume": 143,
+        "putVolume": 137,
+        "totalVolume": 145,
         "callOi": 80,
-        "putOi": 1350,
-        "totalOi": 1430,
-        "netOi": -1270,
+        "putOi": 1370,
+        "totalOi": 1450,
+        "netOi": -1290,
         "oiChange": 0,
         "impliedVol": 0.164240930775122,
         "settleVol": 0.16424093077512225
@@ -650,12 +663,12 @@
       {
         "strike": 28480.0,
         "callVolume": 3,
-        "putVolume": 10,
-        "totalVolume": 13,
+        "putVolume": 11,
+        "totalVolume": 14,
         "callOi": 30,
-        "putOi": 100,
-        "totalOi": 130,
-        "netOi": -70,
+        "putOi": 110,
+        "totalOi": 140,
+        "netOi": -80,
         "oiChange": 0,
         "impliedVol": 0.158074551975005,
         "settleVol": 0.1580745519750053
@@ -676,12 +689,12 @@
       {
         "strike": 28500.0,
         "callVolume": 26,
-        "putVolume": 227,
-        "totalVolume": 253,
+        "putVolume": 228,
+        "totalVolume": 254,
         "callOi": 260,
-        "putOi": 2270,
-        "totalOi": 2530,
-        "netOi": -2010,
+        "putOi": 2280,
+        "totalOi": 2540,
+        "netOi": -2020,
         "oiChange": 0,
         "impliedVol": 0.156487827127421,
         "settleVol": 0.15648782712742104
@@ -753,13 +766,13 @@
       },
       {
         "strike": 28550.0,
-        "callVolume": 33,
+        "callVolume": 39,
         "putVolume": 33,
-        "totalVolume": 66,
-        "callOi": 330,
+        "totalVolume": 72,
+        "callOi": 390,
         "putOi": 330,
-        "totalOi": 660,
-        "netOi": 0,
+        "totalOi": 720,
+        "netOi": 60,
         "oiChange": 0,
         "impliedVol": 0.152466734463815,
         "settleVol": 0.15246673446381465
@@ -818,26 +831,26 @@
       },
       {
         "strike": 28590.0,
-        "callVolume": 36,
+        "callVolume": 37,
         "putVolume": 6,
-        "totalVolume": 42,
-        "callOi": 360,
+        "totalVolume": 43,
+        "callOi": 370,
         "putOi": 60,
-        "totalOi": 420,
-        "netOi": 300,
+        "totalOi": 430,
+        "netOi": 310,
         "oiChange": 0,
         "impliedVol": 0.149215536348493,
         "settleVol": 0.1492155363484926
       },
       {
         "strike": 28600.0,
-        "callVolume": 124,
-        "putVolume": 206,
-        "totalVolume": 330,
-        "callOi": 1240,
-        "putOi": 2060,
-        "totalOi": 3300,
-        "netOi": -820,
+        "callVolume": 125,
+        "putVolume": 216,
+        "totalVolume": 341,
+        "callOi": 1250,
+        "putOi": 2160,
+        "totalOi": 3410,
+        "netOi": -910,
         "oiChange": 0,
         "impliedVol": 0.148400914727972,
         "settleVol": 0.14840091472797212
@@ -845,12 +858,12 @@
       {
         "strike": 28610.0,
         "callVolume": 16,
-        "putVolume": 24,
-        "totalVolume": 40,
+        "putVolume": 30,
+        "totalVolume": 46,
         "callOi": 160,
-        "putOi": 240,
-        "totalOi": 400,
-        "netOi": -80,
+        "putOi": 300,
+        "totalOi": 460,
+        "netOi": -140,
         "oiChange": 0,
         "impliedVol": 0.147586321618292,
         "settleVol": 0.14758632161829155
@@ -883,26 +896,26 @@
       },
       {
         "strike": 28630.0,
-        "callVolume": 641,
-        "putVolume": 25,
-        "totalVolume": 666,
-        "callOi": 6410,
-        "putOi": 250,
-        "totalOi": 6660,
-        "netOi": 6160,
+        "callVolume": 643,
+        "putVolume": 28,
+        "totalVolume": 671,
+        "callOi": 6430,
+        "putOi": 280,
+        "totalOi": 6710,
+        "netOi": 6150,
         "oiChange": 0,
         "impliedVol": 0.145958809065633,
         "settleVol": 0.14595880906563252
       },
       {
         "strike": 28640.0,
-        "callVolume": 50,
+        "callVolume": 51,
         "putVolume": 15,
-        "totalVolume": 65,
-        "callOi": 500,
+        "totalVolume": 66,
+        "callOi": 510,
         "putOi": 150,
-        "totalOi": 650,
-        "netOi": 350,
+        "totalOi": 660,
+        "netOi": 360,
         "oiChange": 0,
         "impliedVol": 0.145146706639935,
         "settleVol": 0.14514670663993456
@@ -949,12 +962,12 @@
       {
         "strike": 28675.0,
         "callVolume": 19,
-        "putVolume": 29,
-        "totalVolume": 48,
+        "putVolume": 31,
+        "totalVolume": 50,
         "callOi": 190,
-        "putOi": 290,
-        "totalOi": 480,
-        "netOi": -100,
+        "putOi": 310,
+        "totalOi": 500,
+        "netOi": -120,
         "oiChange": 0,
         "impliedVol": 0.142320294853562,
         "settleVol": 0.1423202948535618
@@ -1001,12 +1014,12 @@
       {
         "strike": 28710.0,
         "callVolume": 6,
-        "putVolume": 0,
-        "totalVolume": 6,
+        "putVolume": 8,
+        "totalVolume": 14,
         "callOi": 60,
-        "putOi": 0,
-        "totalOi": 60,
-        "netOi": 60,
+        "putOi": 80,
+        "totalOi": 140,
+        "netOi": -20,
         "oiChange": 0,
         "impliedVol": 0.139533346031385,
         "settleVol": 0.139533346031385
@@ -1143,13 +1156,13 @@
       },
       {
         "strike": 28800.0,
-        "callVolume": 60,
+        "callVolume": 61,
         "putVolume": 2,
-        "totalVolume": 62,
-        "callOi": 600,
+        "totalVolume": 63,
+        "callOi": 610,
         "putOi": 20,
-        "totalOi": 620,
-        "netOi": 580,
+        "totalOi": 630,
+        "netOi": 590,
         "oiChange": 0,
         "impliedVol": 0.132694426680246,
         "settleVol": 0.13269442668024567
@@ -1247,13 +1260,13 @@
       },
       {
         "strike": 28870.0,
-        "callVolume": 7,
+        "callVolume": 8,
         "putVolume": 0,
-        "totalVolume": 7,
-        "callOi": 70,
+        "totalVolume": 8,
+        "callOi": 80,
         "putOi": 0,
-        "totalOi": 70,
-        "netOi": 70,
+        "totalOi": 80,
+        "netOi": 80,
         "oiChange": 0,
         "impliedVol": 0.127898076865677,
         "settleVol": 0.12789807686567656
@@ -1377,13 +1390,13 @@
       },
       {
         "strike": 28950.0,
-        "callVolume": 21,
+        "callVolume": 22,
         "putVolume": 0,
-        "totalVolume": 21,
-        "callOi": 210,
+        "totalVolume": 22,
+        "callOi": 220,
         "putOi": 0,
-        "totalOi": 210,
-        "netOi": 210,
+        "totalOi": 220,
+        "netOi": 220,
         "oiChange": 0,
         "impliedVol": 0.123266433121898,
         "settleVol": 0.12326643312189844
@@ -1455,13 +1468,13 @@
       },
       {
         "strike": 29000.0,
-        "callVolume": 104,
+        "callVolume": 106,
         "putVolume": 1,
-        "totalVolume": 105,
-        "callOi": 1040,
+        "totalVolume": 107,
+        "callOi": 1060,
         "putOi": 10,
-        "totalOi": 1050,
-        "netOi": 1030,
+        "totalOi": 1070,
+        "netOi": 1050,
         "oiChange": 0,
         "impliedVol": 0.120977229631535,
         "settleVol": 0.12097722963153501
@@ -1533,13 +1546,13 @@
       },
       {
         "strike": 29050.0,
-        "callVolume": 36,
+        "callVolume": 37,
         "putVolume": 0,
-        "totalVolume": 36,
-        "callOi": 360,
+        "totalVolume": 37,
+        "callOi": 370,
         "putOi": 0,
-        "totalOi": 360,
-        "netOi": 360,
+        "totalOi": 370,
+        "netOi": 370,
         "oiChange": 0,
         "impliedVol": null,
         "settleVol": null
@@ -1621,44 +1634,25 @@
         "oiChange": 0,
         "impliedVol": null,
         "settleVol": null
-      },
-      {
-        "strike": 29200.0,
-        "callVolume": 25,
-        "putVolume": 0,
-        "totalVolume": 25,
-        "callOi": 250,
-        "putOi": 0,
-        "totalOi": 250,
-        "netOi": 250,
-        "oiChange": 0,
-        "impliedVol": null,
-        "settleVol": null
       }
     ],
-    "scrapedAt": "2026-08-03T06:31:02.040Z"
+    "scrapedAt": "2026-08-03T06:46:08.877Z"
   },
   "delta": {
-    "previousScrapedAt": "2026-08-03T04:31:01.938Z",
-    "currentScrapedAt": "2026-08-03T06:31:02.040Z",
+    "previousScrapedAt": "2026-08-03T05:31:03.915Z",
+    "currentScrapedAt": "2026-08-03T06:46:08.877Z",
     "strikeDeltas": [
+      {
+        "strike": 28090.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 5,
+        "totalVolumeChange": 5
+      },
       {
         "strike": 28100.0,
         "callVolumeChange": 0,
         "putVolumeChange": 3,
         "totalVolumeChange": 3
-      },
-      {
-        "strike": 28110.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28130.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 2,
-        "totalVolumeChange": 2
       },
       {
         "strike": 28150.0,
@@ -1667,55 +1661,7 @@
         "totalVolumeChange": 5
       },
       {
-        "strike": 28160.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 5,
-        "totalVolumeChange": 5
-      },
-      {
-        "strike": 28175.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 19,
-        "totalVolumeChange": 19
-      },
-      {
-        "strike": 28200.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28225.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 2,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28250.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28280.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 2,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28300.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 103,
-        "totalVolumeChange": 103
-      },
-      {
         "strike": 28325.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28330.0,
         "callVolumeChange": 0,
         "putVolumeChange": 2,
         "totalVolumeChange": 2
@@ -1723,44 +1669,38 @@
       {
         "strike": 28350.0,
         "callVolumeChange": 1,
-        "putVolumeChange": 3,
-        "totalVolumeChange": 4
+        "putVolumeChange": 0,
+        "totalVolumeChange": 1
       },
       {
-        "strike": 28390.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 2,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28400.0,
-        "callVolumeChange": 1,
-        "putVolumeChange": 33,
-        "totalVolumeChange": 34
-      },
-      {
-        "strike": 28430.0,
+        "strike": 28380.0,
         "callVolumeChange": 0,
         "putVolumeChange": 1,
         "totalVolumeChange": 1
       },
       {
-        "strike": 28460.0,
-        "callVolumeChange": 4,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 4
+        "strike": 28400.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 2,
+        "totalVolumeChange": 3
       },
       {
-        "strike": 28475.0,
-        "callVolumeChange": 1,
+        "strike": 28460.0,
+        "callVolumeChange": 2,
         "putVolumeChange": 0,
+        "totalVolumeChange": 2
+      },
+      {
+        "strike": 28480.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
         "totalVolumeChange": 1
       },
       {
         "strike": 28500.0,
         "callVolumeChange": 0,
-        "putVolumeChange": 105,
-        "totalVolumeChange": 105
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
       },
       {
         "strike": 28520.0,
@@ -1769,28 +1709,10 @@
         "totalVolumeChange": 2
       },
       {
-        "strike": 28525.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28540.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 5,
-        "totalVolumeChange": 5
-      },
-      {
         "strike": 28550.0,
-        "callVolumeChange": 0,
+        "callVolumeChange": 6,
         "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28560.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
+        "totalVolumeChange": 7
       },
       {
         "strike": 28580.0,
@@ -1800,147 +1722,105 @@
       },
       {
         "strike": 28590.0,
-        "callVolumeChange": 2,
+        "callVolumeChange": 3,
         "putVolumeChange": 0,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28600.0,
-        "callVolumeChange": 2,
-        "putVolumeChange": 42,
-        "totalVolumeChange": 44
-      },
-      {
-        "strike": 28620.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 3,
         "totalVolumeChange": 3
       },
       {
-        "strike": 28625.0,
+        "strike": 28600.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 16,
+        "totalVolumeChange": 17
+      },
+      {
+        "strike": 28610.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 6,
+        "totalVolumeChange": 6
+      },
+      {
+        "strike": 28620.0,
         "callVolumeChange": 0,
         "putVolumeChange": 1,
         "totalVolumeChange": 1
       },
       {
         "strike": 28630.0,
-        "callVolumeChange": 119,
-        "putVolumeChange": 7,
-        "totalVolumeChange": 126
+        "callVolumeChange": 6,
+        "putVolumeChange": 9,
+        "totalVolumeChange": 15
       },
       {
         "strike": 28640.0,
-        "callVolumeChange": 18,
-        "putVolumeChange": 4,
-        "totalVolumeChange": 22
-      },
-      {
-        "strike": 28650.0,
-        "callVolumeChange": 2,
-        "putVolumeChange": 10,
-        "totalVolumeChange": 12
-      },
-      {
-        "strike": 28660.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 5,
-        "totalVolumeChange": 5
-      },
-      {
-        "strike": 28670.0,
-        "callVolumeChange": 31,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 31
-      },
-      {
-        "strike": 28675.0,
-        "callVolumeChange": 2,
-        "putVolumeChange": 22,
-        "totalVolumeChange": 24
-      },
-      {
-        "strike": 28680.0,
-        "callVolumeChange": 23,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 23
-      },
-      {
-        "strike": 28690.0,
-        "callVolumeChange": 2,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 3
-      },
-      {
-        "strike": 28700.0,
-        "callVolumeChange": 13,
-        "putVolumeChange": 10,
-        "totalVolumeChange": 23
-      },
-      {
-        "strike": 28720.0,
-        "callVolumeChange": 18,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 18
-      },
-      {
-        "strike": 28725.0,
-        "callVolumeChange": 0,
-        "putVolumeChange": 1,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28750.0,
-        "callVolumeChange": 1,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 28775.0,
         "callVolumeChange": 3,
         "putVolumeChange": 0,
         "totalVolumeChange": 3
       },
       {
-        "strike": 28800.0,
-        "callVolumeChange": 7,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 7
-      },
-      {
-        "strike": 28825.0,
-        "callVolumeChange": 5,
-        "putVolumeChange": 0,
+        "strike": 28650.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 4,
         "totalVolumeChange": 5
       },
       {
-        "strike": 28830.0,
+        "strike": 28660.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 4,
+        "totalVolumeChange": 4
+      },
+      {
+        "strike": 28675.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 7,
+        "totalVolumeChange": 8
+      },
+      {
+        "strike": 28680.0,
+        "callVolumeChange": 20,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 20
+      },
+      {
+        "strike": 28700.0,
+        "callVolumeChange": 9,
+        "putVolumeChange": 5,
+        "totalVolumeChange": 14
+      },
+      {
+        "strike": 28710.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 8,
+        "totalVolumeChange": 8
+      },
+      {
+        "strike": 28720.0,
         "callVolumeChange": 2,
         "putVolumeChange": 0,
         "totalVolumeChange": 2
       },
       {
-        "strike": 28840.0,
+        "strike": 28800.0,
+        "callVolumeChange": 2,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 2
+      },
+      {
+        "strike": 28830.0,
         "callVolumeChange": 1,
         "putVolumeChange": 0,
         "totalVolumeChange": 1
       },
       {
-        "strike": 28860.0,
-        "callVolumeChange": 2,
+        "strike": 28870.0,
+        "callVolumeChange": 1,
         "putVolumeChange": 0,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28875.0,
-        "callVolumeChange": 7,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 7
+        "totalVolumeChange": 1
       },
       {
         "strike": 28880.0,
-        "callVolumeChange": 2,
+        "callVolumeChange": 0,
         "putVolumeChange": 10,
-        "totalVolumeChange": 12
+        "totalVolumeChange": 10
       },
       {
         "strike": 28890.0,
@@ -1950,21 +1830,9 @@
       },
       {
         "strike": 28900.0,
-        "callVolumeChange": 15,
+        "callVolumeChange": 8,
         "putVolumeChange": 0,
-        "totalVolumeChange": 15
-      },
-      {
-        "strike": 28910.0,
-        "callVolumeChange": 2,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 2
-      },
-      {
-        "strike": 28925.0,
-        "callVolumeChange": 1,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 1
+        "totalVolumeChange": 8
       },
       {
         "strike": 28950.0,
@@ -1985,16 +1853,10 @@
         "totalVolumeChange": 1
       },
       {
-        "strike": 28990.0,
-        "callVolumeChange": 1,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 1
-      },
-      {
         "strike": 29000.0,
-        "callVolumeChange": 15,
+        "callVolumeChange": 7,
         "putVolumeChange": 0,
-        "totalVolumeChange": 15
+        "totalVolumeChange": 7
       },
       {
         "strike": 29040.0,
@@ -2004,29 +1866,17 @@
       },
       {
         "strike": 29050.0,
-        "callVolumeChange": 8,
+        "callVolumeChange": 4,
         "putVolumeChange": 0,
-        "totalVolumeChange": 8
-      },
-      {
-        "strike": 29070.0,
-        "callVolumeChange": 1,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 1
-      },
-      {
-        "strike": 29200.0,
-        "callVolumeChange": 5,
-        "putVolumeChange": 0,
-        "totalVolumeChange": 5
+        "totalVolumeChange": 4
       }
     ],
-    "totalCallVolumeChange": 323,
-    "totalPutVolumeChange": 421,
-    "totalVolumeChange": 744,
-    "priceChange": -25.5
+    "totalCallVolumeChange": 85,
+    "totalPutVolumeChange": 97,
+    "totalVolumeChange": 182,
+    "priceChange": 0.75
   },
   "isStale": false,
-  "lastScrapedAt": "2026-08-03T06:31:02.040Z",
+  "lastScrapedAt": "2026-08-03T06:46:08.877Z",
   "archiveSnapshotsCount": 2
 }

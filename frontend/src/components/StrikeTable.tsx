@@ -13,10 +13,6 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
   const [sortField, setSortField] = useState<'strike' | 'totalVolume' | 'callVolume' | 'putVolume' | 'impliedVol'>('totalVolume');
   const [sortAsc, setSortAsc] = useState(false);
 
-  if (!cmeData || !cmeData.strikeData || !cmeData.strikeData.length) return null;
-
-  const futPrice = cmeData.futurePrice;
-
   // Build delta dictionary by strike
   const deltaMap = useMemo(() => {
     const map: Record<number, { callChange: number; putChange: number; totalChange: number }> = {};
@@ -33,6 +29,7 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
   }, [delta]);
 
   const filteredStrikes = useMemo(() => {
+    if (!cmeData || !cmeData.strikeData) return [];
     let result = [...cmeData.strikeData];
 
     // Filter type
@@ -60,6 +57,10 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
 
     return result;
   }, [cmeData, filterType, searchTerm, sortField, sortAsc]);
+
+  if (!cmeData || !cmeData.strikeData || !cmeData.strikeData.length) return null;
+
+  const futPrice = cmeData.futurePrice;
 
   const handleSort = (field: typeof sortField) => {
     if (sortField === field) {
