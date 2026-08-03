@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: intraday-cme-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - CME_DATA_DIR=/app/data/vol2vol
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - "${CME_DATA_DIR:-D:/GetDataCMEBoy/output/vol2vol}:/app/data/vol2vol:ro"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: intraday-cme-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

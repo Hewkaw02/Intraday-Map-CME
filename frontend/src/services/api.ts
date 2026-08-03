@@ -1,7 +1,14 @@
 import type { CmeSymbolData, CmeDelta, PriceResponse } from '../types';
 
-const API_BASE = 'http://localhost:8000/api';
-const WS_BASE = 'ws://localhost:8000/ws/market';
+const isBrowser = typeof window !== 'undefined';
+const protocol = isBrowser && window.location.protocol === 'https:' ? 'https:' : 'http:';
+const wsProtocol = isBrowser && window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+const host = isBrowser ? window.location.host : 'localhost:8000';
+
+const isDev = import.meta.env.DEV;
+
+const API_BASE = (import.meta as any).env?.VITE_API_BASE || (isDev ? 'http://localhost:8000/api' : '/api');
+const WS_BASE = (import.meta as any).env?.VITE_WS_BASE || (isDev ? 'ws://localhost:8000/ws/market' : `${wsProtocol}//${host}/ws/market`);
 
 export interface IntradayResponse {
   symbol: string;

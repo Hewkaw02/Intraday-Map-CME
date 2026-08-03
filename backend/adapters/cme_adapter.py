@@ -9,11 +9,11 @@ from backend.models.cme import (
     CmeSymbolData, SDLevel, SDSide, StrikeData, CmeDelta, StrikeDelta
 )
 
-VOL2VOL_DIR = Path(r"D:\GetDataCMEBoy\output\vol2vol")
+VOL2VOL_DIR = Path(os.getenv("CME_DATA_DIR", r"D:\GetDataCMEBoy\output\vol2vol"))
 
 class CmeAdapter:
-    def __init__(self, data_dir: Path = VOL2VOL_DIR):
-        self.data_dir = data_dir
+    def __init__(self, data_dir: Optional[Path] = None):
+        self.data_dir = data_dir or VOL2VOL_DIR
 
     def parse_symbol_dict(self, raw: dict) -> CmeSymbolData:
         """Parse raw JSON dict into CmeSymbolData."""

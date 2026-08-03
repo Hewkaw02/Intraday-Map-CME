@@ -88,6 +88,33 @@ npm run build
 
 ---
 
+## 🐳 Running with Docker & Docker Compose
+
+You can build and start the entire stack (FastAPI backend + Nginx-served React frontend) with a single command:
+
+```bash
+# Build and start services
+docker compose up --build
+```
+
+Access the services at:
+- **Frontend Web UI**: `http://localhost:5173`
+- **Backend API Docs**: `http://localhost:8000/docs`
+- **Health Check**: `http://localhost:8000/api/health`
+
+### Environment Variables & Custom CME Data Directory
+By default, Docker Compose mounts `D:/GetDataCMEBoy/output/vol2vol` to `/app/data/vol2vol` inside the backend container. You can override the local CME data directory path using `CME_DATA_DIR`:
+
+```bash
+# On Windows PowerShell
+$env:CME_DATA_DIR="D:/GetDataCMEBoy/output/vol2vol"; docker compose up --build
+
+# On Linux/macOS
+CME_DATA_DIR="/path/to/vol2vol" docker compose up --build
+```
+
+---
+
 ## 🧪 Testing
 
 Run backend test suite:
