@@ -5,6 +5,6 @@ websockets>=11.0
 requests>=2.31.0
 pandas>=2.0.0
 yfinance>=0.2.20
-git+https://github.com/brian-the-dev/python-tvdatafeed.git
+https://github.com/brian-the-dev/python-tvdatafeed/archive/refs/heads/main.zip
 pytest>=7.0.0
 httpx>=0.24.0
