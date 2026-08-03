@@ -1,7 +1,6 @@
 import type { CmeSymbolData, CmeDelta, PriceResponse } from '../types';
 
 const isBrowser = typeof window !== 'undefined';
-const protocol = isBrowser && window.location.protocol === 'https:' ? 'https:' : 'http:';
 const wsProtocol = isBrowser && window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 const host = isBrowser ? window.location.host : 'localhost:8000';
 
