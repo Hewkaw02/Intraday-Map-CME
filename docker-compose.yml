@@ -6,7 +6,7 @@ services:
     container_name: intraday-cme-backend
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8002:8000"
     environment:
       - CME_DATA_DIR=/app/data/vol2vol
       - PYTHONUNBUFFERED=1
