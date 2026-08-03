@@ -1,0 +1,352 @@
+{
+  "symbol": "GC",
+  "data": {
+    "symbol": "GC",
+    "productName": "Gold (OG|GC)",
+    "title": "G1MQ6 Intraday Volume",
+    "futurePrice": 4085.0,
+    "atmVolatility": 0.141419520106865,
+    "dte": 0.478912037037037,
+    "standardDeviations": [
+      {
+        "sd": 1,
+        "downside": {
+          "width": 20.925655454612752,
+          "strikeStart": 4064.0743445453872,
+          "strikeEnd": 4085.0
+        },
+        "upside": {
+          "width": 20.925654985798246,
+          "strikeStart": 4085.0,
+          "strikeEnd": 4105.925654985798
+        }
+      },
+      {
+        "sd": 2,
+        "downside": {
+          "width": 41.69106795809921,
+          "strikeStart": 4043.308932041901,
+          "strikeEnd": 4064.0743445453872
+        },
+        "upside": {
+          "width": 42.01265114846137,
+          "strikeStart": 4105.925654985798,
+          "strikeEnd": 4127.012651148461
+        }
+      },
+      {
+        "sd": 3,
+        "downside": {
+          "width": 62.350379460500335,
+          "strikeStart": 4022.6496205394997,
+          "strikeEnd": 4043.308932041901
+        },
+        "upside": {
+          "width": 63.20794479250162,
+          "strikeStart": 4127.012651148461,
+          "strikeEnd": 4148.207944792502
+        }
+      }
+    ],
+    "strikeData": [
+      {
+        "strike": 4025.0,
+        "callVolume": 0,
+        "putVolume": 16,
+        "totalVolume": 16,
+        "impliedVol": 0.15465237898934,
+        "settleVol": 0.15465237898933992
+      },
+      {
+        "strike": 4030.0,
+        "callVolume": 1,
+        "putVolume": 20,
+        "totalVolume": 21,
+        "impliedVol": 0.15269331757554,
+        "settleVol": 0.15269331757554028
+      },
+      {
+        "strike": 4035.0,
+        "callVolume": 0,
+        "putVolume": 0,
+        "totalVolume": 0,
+        "impliedVol": 0.150867287047731,
+        "settleVol": 0.15086728704773122
+      },
+      {
+        "strike": 4040.0,
+        "callVolume": 0,
+        "putVolume": 3,
+        "totalVolume": 3,
+        "impliedVol": 0.149177792458431,
+        "settleVol": 0.1491777924584312
+      },
+      {
+        "strike": 4045.0,
+        "callVolume": 0,
+        "putVolume": 24,
+        "totalVolume": 24,
+        "impliedVol": 0.147628104390606,
+        "settleVol": 0.14762810439060559
+      },
+      {
+        "strike": 4050.0,
+        "callVolume": 1,
+        "putVolume": 24,
+        "totalVolume": 25,
+        "impliedVol": 0.146221258927653,
+        "settleVol": 0.14622125892765325
+      },
+      {
+        "strike": 4055.0,
+        "callVolume": 0,
+        "putVolume": 4,
+        "totalVolume": 4,
+        "impliedVol": 0.144960057694334,
+        "settleVol": 0.14496005769433395
+      },
+      {
+        "strike": 4060.0,
+        "callVolume": 0,
+        "putVolume": 4,
+        "totalVolume": 4,
+        "impliedVol": 0.143847067797651,
+        "settleVol": 0.1438470677976511
+      },
+      {
+        "strike": 4065.0,
+        "callVolume": 0,
+        "putVolume": 3,
+        "totalVolume": 3,
+        "impliedVol": 0.142884621878693,
+        "settleVol": 0.142884621878693
+      },
+      {
+        "strike": 4070.0,
+        "callVolume": 0,
+        "putVolume": 8,
+        "totalVolume": 8,
+        "impliedVol": 0.142074818097171,
+        "settleVol": 0.14207481809717137
+      },
+      {
+        "strike": 4075.0,
+        "callVolume": 2,
+        "putVolume": 11,
+        "totalVolume": 13,
+        "impliedVol": 0.141419520106865,
+        "settleVol": 0.1414195201068651
+      },
+      {
+        "strike": 4080.0,
+        "callVolume": 4,
+        "putVolume": 1,
+        "totalVolume": 5,
+        "impliedVol": 0.140920357102004,
+        "settleVol": 0.14092035710200435
+      },
+      {
+        "strike": 4085.0,
+        "callVolume": 4,
+        "putVolume": 9,
+        "totalVolume": 13,
+        "impliedVol": 0.140578723765429,
+        "settleVol": 0.14057872376542946
+      },
+      {
+        "strike": 4090.0,
+        "callVolume": 9,
+        "putVolume": 6,
+        "totalVolume": 15,
+        "impliedVol": 0.14039578032407,
+        "settleVol": 0.14039578032407007
+      },
+      {
+        "strike": 4095.0,
+        "callVolume": 0,
+        "putVolume": 2,
+        "totalVolume": 2,
+        "impliedVol": 0.140372452488918,
+        "settleVol": 0.1403724524889185
+      },
+      {
+        "strike": 4100.0,
+        "callVolume": 16,
+        "putVolume": 7,
+        "totalVolume": 23,
+        "impliedVol": 0.140509431504142,
+        "settleVol": 0.1405094315041424
+      },
+      {
+        "strike": 4105.0,
+        "callVolume": 9,
+        "putVolume": 0,
+        "totalVolume": 9,
+        "impliedVol": 0.140807174135261,
+        "settleVol": 0.14080717413526145
+      },
+      {
+        "strike": 4110.0,
+        "callVolume": 5,
+        "putVolume": 0,
+        "totalVolume": 5,
+        "impliedVol": 0.141265902642772,
+        "settleVol": 0.14126590264277183
+      },
+      {
+        "strike": 4115.0,
+        "callVolume": 4,
+        "putVolume": 0,
+        "totalVolume": 4,
+        "impliedVol": 0.141885604813979,
+        "settleVol": 0.14188560481397872
+      },
+      {
+        "strike": 4120.0,
+        "callVolume": 18,
+        "putVolume": 0,
+        "totalVolume": 18,
+        "impliedVol": 0.142666033945716,
+        "settleVol": 0.14266603394571575
+      },
+      {
+        "strike": 4125.0,
+        "callVolume": 155,
+        "putVolume": 0,
+        "totalVolume": 155,
+        "impliedVol": 0.143606708862535,
+        "settleVol": 0.14360670886253502
+      },
+      {
+        "strike": 4130.0,
+        "callVolume": 7,
+        "putVolume": 0,
+        "totalVolume": 7,
+        "impliedVol": 0.144706913887603,
+        "settleVol": 0.14470691388760315
+      },
+      {
+        "strike": 4135.0,
+        "callVolume": 10,
+        "putVolume": 0,
+        "totalVolume": 10,
+        "impliedVol": 0.145965698860891,
+        "settleVol": 0.14596569886089128
+      },
+      {
+        "strike": 4140.0,
+        "callVolume": 8,
+        "putVolume": 0,
+        "totalVolume": 8,
+        "impliedVol": 0.147381879144632,
+        "settleVol": 0.14738187914463197
+      },
+      {
+        "strike": 4145.0,
+        "callVolume": 4,
+        "putVolume": 0,
+        "totalVolume": 4,
+        "impliedVol": 0.148954035619681,
+        "settleVol": 0.14895403561968124
+      }
+    ],
+    "scrapedAt": "2026-08-03T06:00:24.931Z"
+  },
+  "delta": {
+    "previousScrapedAt": "2026-08-03T04:15:21.359Z",
+    "currentScrapedAt": "2026-08-03T06:00:24.931Z",
+    "strikeDeltas": [
+      {
+        "strike": 4025.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 12,
+        "totalVolumeChange": 12
+      },
+      {
+        "strike": 4040.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4045.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4050.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4065.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4070.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 2,
+        "totalVolumeChange": 2
+      },
+      {
+        "strike": 4075.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 1,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4085.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4090.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 2,
+        "totalVolumeChange": 2
+      },
+      {
+        "strike": 4095.0,
+        "callVolumeChange": 0,
+        "putVolumeChange": 2,
+        "totalVolumeChange": 2
+      },
+      {
+        "strike": 4100.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4105.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4120.0,
+        "callVolumeChange": 1,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 1
+      },
+      {
+        "strike": 4125.0,
+        "callVolumeChange": 5,
+        "putVolumeChange": 0,
+        "totalVolumeChange": 5
+      }
+    ],
+    "totalCallVolumeChange": 9,
+    "totalPutVolumeChange": 23,
+    "totalVolumeChange": 32,
+    "priceChange": -5.9
+  },
+  "isStale": false,
+  "lastScrapedAt": "2026-08-03T06:00:24.931Z",
+  "archiveSnapshotsCount": 2
+}
