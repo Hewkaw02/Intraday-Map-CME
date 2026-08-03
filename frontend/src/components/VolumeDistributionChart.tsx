@@ -7,7 +7,7 @@ interface VolumeDistributionChartProps {
 }
 
 export const VolumeDistributionChart: React.FC<VolumeDistributionChartProps> = ({ cmeData }) => {
-  if (!cmeData || !cmeData.strikeData.length) return null;
+  if (!cmeData || !cmeData.strikeData || !cmeData.strikeData.length) return null;
 
   const { sortedStrikes, maxVol, callWall, putWall } = useMemo(() => {
     // Sort strikes by strike price ascending

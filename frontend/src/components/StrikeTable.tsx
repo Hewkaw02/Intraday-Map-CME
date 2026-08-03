@@ -13,7 +13,7 @@ export const StrikeTable: React.FC<StrikeTableProps> = ({ cmeData, delta }) => {
   const [sortField, setSortField] = useState<'strike' | 'totalVolume' | 'callVolume' | 'putVolume' | 'impliedVol'>('totalVolume');
   const [sortAsc, setSortAsc] = useState(false);
 
-  if (!cmeData || !cmeData.strikeData.length) return null;
+  if (!cmeData || !cmeData.strikeData || !cmeData.strikeData.length) return null;
 
   const futPrice = cmeData.futurePrice;
 

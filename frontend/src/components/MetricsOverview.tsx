@@ -20,9 +20,10 @@ export const MetricsOverview: React.FC<MetricsOverviewProps> = ({
   const changePct = priceData?.changePercent ?? 0;
   const isPositive = change >= 0;
 
-  const sd1 = cmeData.standardDeviations.find(s => s.sd === 1);
-  const sd2 = cmeData.standardDeviations.find(s => s.sd === 2);
-  const sd3 = cmeData.standardDeviations.find(s => s.sd === 3);
+  const sds = cmeData.standardDeviations || [];
+  const sd1 = sds.find(s => s.sd === 1);
+  const sd2 = sds.find(s => s.sd === 2);
+  const sd3 = sds.find(s => s.sd === 3);
 
   const formatVol = (val?: number | null) => (val ? `${(val * 100).toFixed(2)}%` : 'N/A');
 
