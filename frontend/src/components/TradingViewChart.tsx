@@ -227,7 +227,7 @@ export const TradingViewChart: React.FC<TradingViewChartProps> = ({
           <h2 className="text-base font-bold text-white flex items-center gap-2">
             <span>Price Chart ({symbol})</span>
             <span className="text-xs bg-dark-700 text-slate-300 font-mono font-normal px-2 py-0.5 rounded">
-              1m Candlestick + CME SD Levels
+              1m Candlestick + Intraday Volume + CME SD Levels
             </span>
           </h2>
         </div>
@@ -241,6 +241,9 @@ export const TradingViewChart: React.FC<TradingViewChartProps> = ({
             </span>
             <span className="flex items-center text-blue-400">
               <span className="w-2.5 h-0.5 bg-blue-400 mr-1.5"></span> ±2SD / ±3SD
+            </span>
+            <span className="flex items-center text-slate-400">
+              <span className="w-2.5 h-2.5 bg-blue-500/40 mr-1.5 rounded-sm"></span> Intraday Volume
             </span>
           </div>
         )}
