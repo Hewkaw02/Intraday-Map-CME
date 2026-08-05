@@ -39,6 +39,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def disable_api_caching(request, call_next):
+    """Keep live API responses from being served from Render's edge cache."""
+    response = await call_next(request)
+    if request.url.path.startswith("/api/"):
+        response.headers["Cache-Control"] = "no-store"
+    return response
+
 @app.get("/api/health")
 async def get_health():
     return {
