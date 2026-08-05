@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { MetricsOverview } from './components/MetricsOverview';
 import { TradingViewChart } from './components/TradingViewChart';
-import { VolumeDistributionChart } from './components/VolumeDistributionChart';
 import { StrikeTable } from './components/StrikeTable';
 import { fetchIntradayData, fetchPriceData, connectWebSocket } from './services/api';
 import type { CmeSymbolData, CmeDelta, PriceResponse } from './types';
@@ -131,11 +130,6 @@ export const App: React.FC = () => {
           candles={priceData?.candles || []}
           cmeData={cmeData}
           symbol={selectedSymbol}
-        />
-
-        {/* Volume Distribution Histogram */}
-        <VolumeDistributionChart
-          cmeData={cmeData}
         />
 
         {/* Option Strike Data Table */}
