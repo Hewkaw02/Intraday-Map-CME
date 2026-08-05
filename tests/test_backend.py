@@ -1,4 +1,5 @@
 import pytest
+from pathlib import Path
 from fastapi.testclient import TestClient
 from backend.main import app
 from backend.adapters.cme_adapter import CmeAdapter
@@ -30,6 +31,11 @@ def test_cme_adapter_loading():
     assert gc.futurePrice > 0
     assert len(gc.standardDeviations) > 0
     assert len(gc.strikeData) > 0
+
+def test_cme_adapter_bundled_snapshot_loading():
+    adapter = CmeAdapter(Path("frontend/public/data"))
+    symbols_data = adapter.load_all_symbols()
+    assert set(symbols_data) >= {"GC", "NQ", "ES"}
 
 def test_intraday_endpoint():
     response = client.get("/api/intraday/GC")

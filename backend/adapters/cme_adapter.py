@@ -74,8 +74,12 @@ class CmeAdapter:
         )
 
     def load_latest_summary(self) -> Optional[Dict[str, CmeSymbolData]]:
-        """Attempt to load vol2vol_summary_latest.json."""
+        """Load the latest summary, including the bundled static snapshot format."""
         summary_path = self.data_dir / "vol2vol_summary_latest.json"
+        if not summary_path.exists():
+            # Render/GitHub deployments ship the frontend snapshot as summary.json.
+            # Keep the normal Vol2Vol filename as the preferred live-data source.
+            summary_path = self.data_dir / "summary.json"
         if not summary_path.exists():
             return None
 

@@ -128,6 +128,8 @@ async def websocket_endpoint(websocket: WebSocket):
         logger.info("WebSocket client disconnected.")
     except Exception as e:
         logger.warning(f"WebSocket error: {e}")
+    finally:
+        await market_state.unregister_subscriber(websocket)
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 
